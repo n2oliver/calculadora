@@ -170,47 +170,42 @@
             if(elem.checked) {
                 localStorage.setItem("darkmode", 1);
                 for(let material of document.querySelectorAll(".bg-light")) {
-
-                    const bgWhite = document.querySelector(".bg-white");
-                    if(bgWhite) {
-                        bgWhite.classList.remove("bg-white");
-                        bgWhite.classList.add("bg-dark");
-                        bgWhite.classList.add("text-light");
-                    }
-                    material.classList.remove("bg-light");
-                    material.classList.add("bg-dark");
-                    material.classList.add("text-light");
+                    setDark(material);
                 }
             } else {
                 localStorage.setItem("darkmode", 0);
                 for(let material of document.querySelectorAll(".bg-dark")) {
-                    const bgDark = document.querySelector(".bg-dark");
-                    if(bgDark) {
-                        bgDark.classList.remove("bg-dark");
-                        bgDark.classList.add("bg-white");
-                        bgDark.classList.remove("text-light");
-                    }
-                    material.classList.remove("bg-dark");
-                    material.classList.add("bg-light");
-                    material.classList.remove("text-light");
-
+                    setLight(material);
                 }
             }
+        }
+        function setLight(material) {
+            const bgDark = document.querySelector(".bg-dark");
+            if(bgDark) {
+                bgDark.classList.remove("bg-dark");
+                bgDark.classList.add("bg-white");
+                bgDark.classList.remove("text-light");
+            }
+            material.classList.remove("bg-dark");
+            material.classList.add("bg-light");
+            material.classList.remove("text-light");
+        }
+        function setDark(material) {
+            const bgWhite = document.querySelector(".bg-white");
+            if(bgWhite) {
+                bgWhite.classList.remove("bg-white");
+                bgWhite.classList.add("bg-dark");
+                bgWhite.classList.add("text-light");
+            }
+            material.classList.remove("bg-light");
+            material.classList.add("bg-dark");
+            material.classList.add("text-light");
         }
         
         if(localStorage.darkmode == 1) {
             document.getElementById("darkMode").checked = true;
             for(let material of document.querySelectorAll(".bg-light")) {
-
-                const bgWhite = document.querySelector(".bg-white");
-                if(bgWhite) {
-                    bgWhite.classList.remove("bg-white");
-                    bgWhite.classList.add("bg-dark");
-                    bgWhite.classList.add("text-light");
-                }
-                material.classList.remove("bg-light");
-                material.classList.add("bg-dark");
-                material.classList.add("text-light");
+                setDark(material)
             }
         }
     </script>
