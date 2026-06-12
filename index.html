@@ -6,68 +6,81 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url(/jogos/combo-memo/components/platform/wood.jpg)
+        }
+        .button:hover {
+            background-color: #dee1e3
+        }
+
+    </style>
 </head>
-<body>
-    <div class="m-auto" style="width: fit-content">
-        <div class="d-flex">
-            <input type="text" disabled class="form-control bg-white" id="digitedNumber"/>
+<body class="d-flex align-items-center justify-content-center">
+    <div class="m-auto p-4 border bg-white" style="width: stretch; height: stretch;">
+        <div class="d-flex" style="height: 8vh">
+            <input type="text" disabled class="form-control bg-white fs-1 text-end" id="digitedNumber"/>
         </div>
-        <div class="d-flex">
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)"
-                >7</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">8</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">9</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
+        <div class="d-flex buttons bg-light" style="height: 16vh">
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="reset()">C</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
                 onclick="tecla(this.innerText)">/</div>
-        </div>
-        <div class="d-flex">
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">4</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">5</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">6</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
                 onclick="tecla(this.innerText)">*</div>
-        </div>
-        <div class="d-flex">
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">1</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">2</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">3</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
                 onclick="tecla(this.innerText)">-</div>
         </div>
-        <div class="d-flex">
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="tecla(this.innerText)">0</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="reset()">C</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
-                onclick="result()">=</div>
-            <div class="text-center align-content-center border" 
-                style="width: 60px; height: 60px; cursor: pointer"
+        <div class="d-flex buttons bg-light" style="height: 16vh">
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">7</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">8</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">9</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
                 onclick="tecla(this.innerText)">+</div>
+        </div>
+        <div class="d-flex buttons bg-light" style="height: 16vh">
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">4</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">5</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">6</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">.</div>
+        </div>
+        <div class="d-flex buttons bg-light" style="height: 16vh">
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">1</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">2</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">3</div>
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="tecla(this.innerText)">0</div>
+        </div>
+        <div class="d-flex buttons bg-light" style="height: 16vh">
+            <div class="button text-center align-content-center border" 
+                style="width: stretch; height: stretch; cursor: pointer"
+                onclick="result()">=</div>
         </div>
     </div>
     <script>
