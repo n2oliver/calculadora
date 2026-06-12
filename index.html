@@ -12,7 +12,8 @@
             background-image: url(/jogos/combo-memo/components/platform/wood.jpg)
         }
         .button:hover {
-            background-color: #dee1e3
+            background-color: #dee1e3;
+            color: #000;
         }
 
     </style>
@@ -112,6 +113,7 @@
         const arrowLeft = "ArrowLeft";
         const arrowRight = "ArrowRight";
         function testa(event) {
+            const newValue = document.getElementById("digitedNumber").value;
             if(!teclasValidas.includes(event.key) &&
                 event.key != deleteKey &&
                 event.key != backspace &&
@@ -132,15 +134,15 @@
                 clear();
                 return false;
             }
+            
+            numberString = newValue;
+
             if(event.key != deleteKey &&
                 event.key != backspace &&
                 event.key != enter &&
                 event.key != esc &&
                 event.key != arrowLeft &&
                 event.key != arrowRight) {
-                if(document.getElementById("digitedNumber").value == "") {
-                    numberString = "";
-                }
                 numberString += event.key;
             }
         }
