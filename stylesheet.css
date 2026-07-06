@@ -1,0 +1,22 @@
+body {
+    background-image: url(../jogos/combo-memo/components/platform/wood.jpg)
+}
+
+.button:hover {
+    background-color: #dee1e3;
+    color: #000;
+}
+
+.outline {
+    outline-width: 4px;
+    outline-style: outset;
+    outline-offset: -4px;
+}
+
+.result_preview {
+    position: relative;
+    bottom: 32px;
+    right: 16px;
+    font-size: 12px;
+    color: white;
+}
