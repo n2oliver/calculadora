@@ -93,30 +93,40 @@ function dark(elem) {
 }
 function setLight() {
     localStorage.setItem("darkmode", 0);
+    document.querySelector(".fa-moon").classList.remove("text-light");
+    document.getElementById("digitedNumber").classList.remove("text-light");
+    document.getElementById("result_preview").classList.remove("text-light");
+    const buttons = document.getElementsByClassName("button");
+    for(let button of buttons) {
+        button.classList.remove("text-light");
+    }
     for (let material of document.querySelectorAll(".bg-dark")) {
         const bgDark = document.querySelector(".bg-dark");
         if (bgDark) {
             bgDark.classList.remove("bg-dark");
             bgDark.classList.add("bg-white");
-            bgDark.classList.remove("text-light");
         }
         material.classList.remove("bg-dark");
         material.classList.add("bg-light");
-        material.classList.remove("text-light");
     }
 }
 function setDark() {
     localStorage.setItem("darkmode", 1);
+    document.querySelector(".fa-moon").classList.add("text-light");
+    document.getElementById("digitedNumber").classList.add("text-light");
+    document.getElementById("result_preview").classList.add("text-light");
+    const buttons = document.getElementsByClassName("button");
+    for(let button of buttons) {
+        button.classList.add("text-light");
+    }
     for (let material of document.querySelectorAll(".bg-light")) {
         const bgWhite = document.querySelector(".bg-white");
         if (bgWhite) {
             bgWhite.classList.remove("bg-white");
             bgWhite.classList.add("bg-dark");
-            bgWhite.classList.add("text-light");
         }
         material.classList.remove("bg-light");
         material.classList.add("bg-dark");
-        material.classList.add("text-light");
     }
 }
 
@@ -133,4 +143,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
     darkModeOption();
 });
-module.exports = {window, document, testa, tecla, prepareResult, result};
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = {window, document, testa, tecla, prepareResult, result};
+}
