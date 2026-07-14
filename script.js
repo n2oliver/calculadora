@@ -27,6 +27,7 @@ function testa(event) {
         event.preventDefault();
         prepareResult();
         document.getElementById("digitedNumber").value = result();
+        document.getElementById("result_preview").innerText = "";
         return false;
     }
     if (event.key == esc) {
@@ -54,9 +55,17 @@ function tecla(numberButton) {
     try {
         const valor = eval(result());
 
+        if(numberButton.toString() == "=") {
+            document.getElementById("result_preview").innerText = '';
+            return;
+        }
         document.getElementById("result_preview").innerText = '=' + valor;
     } catch (e) {
-        document.getElementById("result_preview").innerText = result();
+        if(numberButton.toString() == "=") {
+            document.getElementById("result_preview").innerText = '';
+            return;
+        }
+        document.getElementById("result_preview").innerText = '=' + result();
     }
 }
 function prepareResult() {
@@ -139,7 +148,8 @@ function darkModeOption() {
 document.addEventListener("DOMContentLoaded", ()=>{
     document.getElementById("equal").addEventListener("click", ()=> {
         prepareResult();
-        document.getElementById('digitedNumber').value = result()
+        document.getElementById('digitedNumber').value = result();
+        document.getElementById("result_preview").innerText = '';
     });
     darkModeOption();
 });
