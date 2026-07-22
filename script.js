@@ -103,6 +103,7 @@ function dark(elem) {
 function setLight() {
     localStorage.setItem("darkmode", 0);
     document.querySelector(".fa-moon").classList.remove("text-light");
+    document.querySelector(".navbar-brand").classList.remove("text-light");
     document.getElementById("digitedNumber").classList.remove("text-light");
     document.getElementById("result_preview").classList.remove("text-light");
     const buttons = document.getElementsByClassName("button");
@@ -122,8 +123,10 @@ function setLight() {
 function setDark() {
     localStorage.setItem("darkmode", 1);
     document.querySelector(".fa-moon").classList.add("text-light");
+    document.querySelector(".navbar-brand").classList.add("text-light");
     document.getElementById("digitedNumber").classList.add("text-light");
     document.getElementById("result_preview").classList.add("text-light");
+    
     const buttons = document.getElementsByClassName("button");
     for(let button of buttons) {
         button.classList.add("text-light");
